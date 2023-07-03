@@ -5,12 +5,14 @@ on:
     workflows: ["Build and Deploy to Dev"]
     types:
       - completed
-
+    branches:
+        - main
+        - feature/branch_workflows
 
 jobs:
   deploy-int:
     runs-on: ubuntu-latest
-    if: github.event.workflow_run.conclusion == 'success' 
+    if: ${{ github.event.workflow_run.head_branch == 'feature/branch_workflows' && github.event.workflow_run.conclusion == 'success' }}
     environment:
       name: 'int'
     steps:
