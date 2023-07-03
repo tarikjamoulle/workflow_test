@@ -12,8 +12,6 @@ jobs:
   deploy-prd:
     runs-on: ubuntu-latest
     if: github.event.workflow_run.conclusion == 'success'
-    # environment:
-    #   name: 'prd'
     steps:
       - name: Checkout github repository
         uses: actions/checkout@v3
