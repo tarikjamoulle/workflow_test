@@ -27,6 +27,8 @@ jobs:
   deploy-dev:
     needs: build-and-push
     runs-on: ubuntu-latest
+    environment: 
+      name: 'dev'
     steps:
       - name: Deploy to Dev
         run: echo "Deploy to Dev"
