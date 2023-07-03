@@ -1,4 +1,4 @@
-name: Deploy to Prd with Manual Approval
+name: Deploy to Int with Manual Approval
 
 on:
   workflow_run:
