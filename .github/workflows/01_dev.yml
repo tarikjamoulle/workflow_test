@@ -19,8 +19,6 @@ jobs:
         uses: actions/checkout@v3
 
       - name: Read project_config.yaml and setup environment
-        env:
-          ENVIRONMENT: dev
         run: |
           python scripts/main.py >> $GITHUB_ENV
 
