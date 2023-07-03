@@ -13,8 +13,8 @@ jobs:
   deploy-int:
     runs-on: ubuntu-latest
     if: ${{ github.event.workflow_run.head_branch == 'feature/branch_workflows' && github.event.workflow_run.conclusion == 'success' }}
-    environment:
-      name: 'int'
+    # environment:
+    #   name: 'int'
     steps:
       - name: Checkout github repository
         uses: actions/checkout@v3
