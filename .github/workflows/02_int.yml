@@ -11,9 +11,8 @@ jobs:
   deploy-int:
     runs-on: ubuntu-latest
     environment:
-      name: 'int'
-    if: ${{ github. github.event.workflow_run.conclusion == 'success' }}
-#    if: ${{ github.event.workflow_run.head_branch == 'feature/deploy_strategy' && github.event.workflow_run.conclusion == 'success' }}
+      name: int
+      if: github. github.event.workflow_run.conclusion == 'success'
     steps:
       - name: Checkout github repository
         uses: actions/checkout@v3
